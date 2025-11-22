@@ -1,17 +1,18 @@
-const inputUser = document.getElementsByClassName(`.input`);
+const inputUser = document.getElementsByClassName(`input`);
 const numOne = document.getElementById(`one`);
 const numTwo = document.getElementById(`two`);
 const delC = document.getElementById(`del`);
 
-let count = [];
+console.log(inputUser);
 
+let firstNumber = '';
+let secondNumber = '';
+let operator = '';
 
-numOne.addEventListener('click', () => inputUser.innerHTML += 1)
-numTwo.addEventListener('click', () => inputUser.innerHTML += 2)
+const maxLength = 12;
 
-delC.addEventListener("click", () => {if(delete(textContent)){
-    inputUser.innerHTML = 0;
-}});
-
+numOne.addEventListener('click', () => {
+    inputUser.value = 1;
+})
 
 

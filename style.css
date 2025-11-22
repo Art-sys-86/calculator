@@ -28,10 +28,16 @@ h1 {
 
 }
 
-#result{
-    color: white;
+input{
+    color: rgb(255, 255, 255);
     font-size: 1.5em;
     text-align: right;
+    width: 100%;
+    background-color: rgb(10, 10, 10);
+}
+
+input:focus{
+    outline: none;
 }
 
 #calcHolder{
@@ -52,7 +58,7 @@ h1 {
     width: fit-content;
 }
 
-#one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #zero, #plus, #minus, #times, #divide, #equal {
+#one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #zero, #plus, #minus, #times, #divide, #equal, #point {
     border-radius: 50%;
     width: 60px;
     height: 60px;
@@ -61,7 +67,7 @@ h1 {
     color: white;
 }
 
-#plus, #minus, #times, #divide, #equal{
+#plus, #minus, #times, #divide, #equal, #point{
     background-color: rgb(251, 171, 0);
     color: white;
 
@@ -76,4 +82,10 @@ h1 {
     color: white;
     margin-top: 0;
     margin-bottom: 20px;
+}
+
+#one:hover, #two:hover, #three:hover, #four:hover, #five:hover, 
+#six:hover, #seven:hover, #eight:hover, #nine:hover, #zero:hover, #point
+#plus:hover, #minus:hover, #times:hover, #divide:hover, #equal:hover, #point:hover, #del:hover{
+    background-color: rgb(153, 153, 153);
 }
