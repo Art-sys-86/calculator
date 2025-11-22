@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: rgb(10, 10, 10);
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+h1 {
+    font-size: 2em;
+    font-family: monospace;
+    border: 2px solid black;
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 1em;
+
+}
+
+#result{
+    color: white;
+    font-size: 1.5em;
+    text-align: right;
+}
+
+#calcHolder{
+    border: 2px solid rgb(227, 224, 224);
+    width: 14em;
+    padding-top: 130px;
+    margin: auto;
+    border-radius: 2em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#btnHold{
+    font-size: 2em;
+    display: grid;
+    margin: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.2em 0.2em;
+    width: fit-content;
+}
+
+#one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #zero, #plus, #minus, #times, #divide, #equal {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: rgb(51, 49, 49);
+    color: white;
+}
+
+#plus, #minus, #times, #divide, #equal{
+    background-color: rgb(251, 171, 0);
+    color: white;
+
+}
+
+#del{
+    border-radius: 10px;
+    width: 50px;
+    height: 40px;
+    font-size: 0.5em;
+    background-color: rgb(51, 49, 49);
+    color: white;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
