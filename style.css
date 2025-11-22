@@ -85,7 +85,7 @@ input:focus{
 }
 
 #one:hover, #two:hover, #three:hover, #four:hover, #five:hover, 
-#six:hover, #seven:hover, #eight:hover, #nine:hover, #zero:hover, #point
+#six:hover, #seven:hover, #eight:hover, #nine:hover, #zero:hover,
 #plus:hover, #minus:hover, #times:hover, #divide:hover, #equal:hover, #point:hover, #del:hover{
     background-color: rgb(153, 153, 153);
 }
