@@ -8,6 +8,7 @@ const delC = document.getElementById(`del`);
 
 let firstNumber = '';
 let secondNumber = '';
+let currentNumber = '';
 let operator = '';
 let waitingForNum = false;
 
@@ -26,10 +27,15 @@ numOne.addEventListener('click', () => {
 })
 
 add.addEventListener('click', () => {
-    firstNumber = parseFloat(inputUser.value);
+    firstNumber = parseFloat(inputUser.value); //
+    secondNumber = parseFloat(inputUser.value);
     inputUser.value = "+";
     operator = "+";
     waitingForNum = true;
+    if(operator === "+"){
+        currentNumber = firstNumber + secondNumber;
+    }
+
 })
 
 sub.addEventListener('click', ()=> {
@@ -40,20 +46,16 @@ sub.addEventListener('click', ()=> {
 })
 
 equal.addEventListener('click', () =>{
-    secondNumber = parseFloat(inputUser.value);
-    if(operator === "+"){
-        inputUser.value = firstNumber + secondNumber;
-        firstNumber = '';
-        operator = '';
-    }
-    if(operator === "-"){
-        inputUser.value = firstNumber - secondNumber;
-        firstNumber = '';
-        operator = '';
+    inputUser.value = currentNumber;
+    if(inputUser.value === NaN){
+        return `Error!`;
     }
 })
 delC.addEventListener('click', () => {
     inputUser.value = '';
+    currentNumber = '';
+    firstNumber = '';
+    secondNumber = '';
 })
 
 
