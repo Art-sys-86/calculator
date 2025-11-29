@@ -1,13 +1,13 @@
-const digits = document.getElementsByClassName("btns"); //Used this because we want the variable or value to be live not static and be done.
+const digits = document.getElementsByClassName("digit"); //Used this because we want the variable or value to be live not static and be done.
 const operators = document.getElementsByClassName("operator");
 const equal = document.getElementById("equal");
-const delC = document.getElementById(`del`);
+const deleteButton = document.getElementById(`del`);
 const inputUser = document.querySelector(`input`);
+const history = document.getElementById('historyLog');
 const maxLength = 15;
 
 let firstNumber = 0;
 let secondNumber = 0;
-let currentNumber = 0;
 let operator;
 let waitingForNum = false;
 
@@ -20,6 +20,8 @@ for(let digit of digits){
 function digitHandler(e){
     let button = e.target;
     let value = button.dataset.value;
+
+    if (value === "." && inputUser.value.includes(".")) return;
     //Making sure it doesnt exceed maxLength set
     if(inputUser.value.length >= maxLength){
         return;
@@ -60,6 +62,8 @@ function operationHandler(e){
     else if(operator){
         secondNumber = inputValue;
         firstNumber = cal(firstNumber, operator, secondNumber);
+        
+        history.textContent = [firstNumber, operationValue].join("");
         inputUser.value = firstNumber; //update the display!
     }
     operator = operationValue; //replace the previous operator with current
@@ -69,17 +73,20 @@ function operationHandler(e){
 //oeprations
 
 function cal(first, operator, second){
-    switch(true){
-        case operator === "+":
+    if(operator === "÷" && second === 0){
+        return Infinity;
+    }
+    switch(operator){
+        case "+":
             return first + second;
             break;
-        case operator === "-":
+        case "-":
             return first - second;
             break;
-        case operator === "÷":
+        case "÷":
             return first/second;
             break;
-        case operator === "X":
+        case "X":
             return first*second;
             break;
         default:
@@ -88,7 +95,34 @@ function cal(first, operator, second){
 };
 
 equal.addEventListener('click', () =>{
-    if(!waitingForNum){
-        return cal(firstNumber, operator, secondNumber);
+    if(!operator){
+        return inputUser.value = "Bruh!?";
     }
+        secondNumber = parseFloat(inputUser.value);
+        let result = cal(firstNumber, operator, secondNumber);
+    if(isNaN(result)){
+        inputUser.value = "Input A Number";
+        return;
+    }
+    if (!Number.isFinite(result)) {
+        inputUser.value = "You can't divide by 0";
+        history.textContent = "";
+        operator = "";
+        waitingForNum = true;
+        return;
+    }
+        inputUser.value = result;
+        history.textContent = inputUser.value;
+        firstNumber = result;
+        secondNumber = 0;
+        operator = "";
+        waitingForNum = true;
+})
+
+deleteButton.addEventListener('click', ()=>{
+    firstNumber = 0;
+    secondNumber = 0;
+    operator = "";
+    history.textContent = "";
+    inputUser.value = "";
 })
