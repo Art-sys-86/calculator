@@ -38,6 +38,17 @@ h1 {
     min-height: 1.3em;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+::placeholder {
+    color: rgb(255, 255, 255);
+    opacity: 1;
+}
+
 input{
     color: rgb(255, 255, 255);
     font-size: 1.5em;
@@ -68,7 +79,7 @@ input:focus{
     width: fit-content;
 }
 
-.btns, #plus, #minus, #times, #divide, #equal, #point {
+.digit, #plus, #minus, #times, #divide, #equal, #point {
     border-radius: 50%;
     width: 60px;
     height: 60px;
@@ -94,6 +105,6 @@ input:focus{
     margin-bottom: 20px;
 }
 
-.btns:hover, #plus:hover, #minus:hover, #times:hover, #divide:hover, #equal:hover, #point:hover{
+.digit:hover, #plus:hover, #minus:hover, #times:hover, #divide:hover, #equal:hover, #point:hover{
     background-color: rgb(153, 153, 153);
 }

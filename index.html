@@ -10,28 +10,30 @@
 <main>
     <h1>Calculator!</h1>
     <div id="calcHolder">
-        <input type="text" name="userInput" maxlength="12">
+        <p id="historyLog"></p>
+        <input type="tex" name="userInput" maxlength="12" placeholder="0">
         <div id="btnHold">
-        <button id="one">1</button>
-        <button id="two">2</button>
-        <button id="three">3</button>
-        <button id="four">4</button>
-        <button id="five">5</button>
-        <button id="six">6</button>
-        <button id="seven">7</button>
-        <button id="eight">8</button>
-        <button id="nine">9</button>
-        <button id="zero">0</button>
-        <button id="plus">+</button>
-        <button id="minus">-</button>
-        <button id="times">X</button>
-        <button id="divide">/</button>
-        <button id="equal">=</button>
-        <button id ="point">.</button>
-        <button id="del">C</button>
+        <button data-value="1" class = "digit">1</button>
+        <button data-value="2" class = "digit">2</button>
+        <button data-value="3" class = "digit">3</button>
+        <button data-value="4" class = "digit">4</button>
+        <button data-value="5" class = "digit">5</button>
+        <button data-value="6" class = "digit">6</button>
+        <button data-value="7" class = "digit">7</button>
+        <button data-value="8" class = "digit">8</button>
+        <button data-value="9" class = "digit">9</button>
+        <button data-value="0" class = "digit">0</button>
+        <button data-value="+" class = "operator" id="plus">+</button>
+        <button data-value="-" class = "operator" id="minus">-</button>
+        <button data-value="X" class = "operator" id="times">X</button>
+        <button data-value="÷" class = "operator" id="divide">÷</button>
+        <button data-value="=" id="equal">=</button>
+        <button data-value="." class = "digit" id ="point">.</button>
+        <button data-value="C" id="del">C</button>
         </div>
     </div>
+    
 </main>
 </body>
-<script src="index.js"></script>
+<script src="main.js"></script>
 </html>
