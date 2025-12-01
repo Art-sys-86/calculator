@@ -62,7 +62,9 @@ function operationHandler(e){
     else if(operator){
         secondNumber = inputValue;
         firstNumber = cal(firstNumber, operator, secondNumber);
-        
+        if (firstNumber % 1 !== 0) { //Limit the decimal to 5 after the decimal point
+        firstNumber = Number(firstNumber.toFixed(5));
+        } 
         history.textContent = [firstNumber, operationValue].join("");
         inputUser.value = firstNumber; //update the display!
     }
@@ -111,6 +113,9 @@ equal.addEventListener('click', () =>{
         waitingForNum = true;
         return;
     }
+    if (result % 1 !== 0) {
+    result = Number(result.toFixed(5));
+    } 
         inputUser.value = result;
         history.textContent = inputUser.value;
         firstNumber = result;
