@@ -11,10 +11,10 @@ constructor(inputElement, historyLog) {
 clear(){
     this.firstNumber = 0;
     this.secondNumber = 0;
-    this.operator = null; // Changed to null for consistency
-    this.historyLog.textContent = ""; // FIXED: Use .textContent
+    this.operator = null;
+    this.historyLog.textContent = "";
     this.inputElement.value = "";
-    this.waitingForNum = false; // Added for completeness
+    this.waitingForNum = false;
 }
 
 cal(first, operator, second){
