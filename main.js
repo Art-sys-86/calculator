@@ -131,3 +131,4 @@ deleteButton.addEventListener('click', ()=>{
     history.textContent = "";
     inputUser.value = "";
 })
+
